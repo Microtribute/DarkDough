@@ -1,0 +1,46 @@
+%h2.title Income
+%span.sub_title 
+  ₦ 5,500 so far of ₦ 
+  = @budgets.income.map(&:amount).sum
+%a.add-new{:onClick => "show_overlay('new-budget');", :style => "text-align:left;"}
+  %span>
+  Create a new income
+#income
+  - @budgets.income.each do |income|
+    %ul
+      %li.b_title
+        Income:
+        %span.b-categ= income.category.name
+      %li.do_edit_list
+        %a.do_edit{:href => "#", :onClick => "show_overlay('pop-up-edit');"}
+      %li.rate_value 
+        ₦ 
+        = income.amount
+        of 
+        ₦ 
+        = @budgets.income.map(&:amount).sum
+      %li.progress-bar
+        %span.positive-progress{:style => "width:36%;"}
+#spending
+  %h2.title Spending
+  %span.sub_title 
+    ₦ 900 spent of ₦ 
+    = @budgets.spending.map(&:amount).sum
+  %a.add-new{:href => "#", :onClick => "show_overlay('new-budget');", :style => "text-align:left;"}
+    %span>
+    Create a new budget
+  - @budgets.spending.each do |spending|
+    %ul
+      %li.b_title
+        Spending:
+        %span.b-categ= spending.category.name
+      %li.do_edit_list
+        %a.do_edit{:href => "#", :onClick => "show_overlay('pop-up-edit');"}
+        %li.rate_value 
+          ₦ 
+          = spending.amount
+          of 
+          ₦ 
+          = @budgets.spending.map(&:amount).sum
+      %li.progress-bar
+        %span.negative-progress{:style => "width:96%;"}

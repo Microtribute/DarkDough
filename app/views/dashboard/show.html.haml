@@ -1,0 +1,49 @@
+#dashboard
+  %aside
+    .left-side
+      #current_user
+        .main_info
+          = image_tag current_user.avatar(:medium)
+          .user_info
+            = current_user.first_name
+            = current_user.last_name
+            %span.user_address= current_user.country
+        .test_info
+          .test_progress
+            .item
+              .start 0
+              .end 100
+              .progress
+          /= acumen_test_menu(current_user, current_page_menu('acumen_tests'))
+          = link_to 'New Question', touchfeely_path
+        .totems
+          My totems
+          %span 0
+          %div
+            .totem.first
+            .totem.second
+            .totem
+            .totem
+
+    / .left-side
+    /   %h3 Top users
+
+    / .left-side
+    /   %h3 My friends
+
+    / .left-side
+    /   %h3 Videos
+
+    / .left-side
+    /   %h3 Articles
+
+  #user-info
+    .block.right
+      = render 'goals', goals: @goals
+      = render 'budgets', budgets: @budgets
+      = render 'historical_spending', spending: @spending_transactions
+
+
+= javascript_tag do
+  $('.dashboard.budgets').progressBar();
+  $('.test_progress').progressBar();

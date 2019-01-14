@@ -1,0 +1,10 @@
+<%= render :partial => 'by_category' %>
+<%= render :partial => 'over_time' %>
+<%= render :partial => 'by_merchant' %>
+<%#= render :partial => 'by_tag' %>
+
+<div class="hidden" id="site-currency">&#8358;</div>
+
+<%= javascript_tag  do%>
+  $('#trends_search').implementSvg();
+<% end %>

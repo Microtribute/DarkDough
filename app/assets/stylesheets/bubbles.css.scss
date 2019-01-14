@@ -1,0 +1,64 @@
+body {*font-size:small; *font:x-small; line-height:1.22; }
+
+::-moz-selection{ background: rgb(236,201,26); color:#fff; text-shadow: none; }
+::selection { background:rgb(236,201,26); color:#fff; text-shadow: none; } 
+
+html { overflow-y: scroll; }
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+#to_ill.page {
+  font-size: 200px;
+  width: 1200px;
+  margin-left: -600px;
+  left: 50%;
+}
+
+.clustered svg {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  font-family: "atrament-web", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+#to_cool {
+	font-size: 280px;
+	color: rgb(255,141,255);
+	width: 1160px;
+	left: 50%;
+	margin-left: -580px;
+	transition: text-indent .3s ease-in;
+    -o-transition: text-indent .3s ease-in;
+    -moz-transition: text-indent .3s ease-in;
+    -webkit-transition: text-indent .3s linear;
+}
+
+
+#to_cluster.clustered {
+	font-size: 248px !important;
+	margin-top: 0px;
+}
+
+#to_cluster {
+  position: absolute;
+  text-indent: -9999px;
+  width: 1150px;
+  left: 50%;
+  margin-left: -535px;
+  font-family: "atrament-web", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+#to_cluster.page {
+	margin-top: -60px;
+}
+
+#to_cluster.missing {
+	width: 610px;
+	margin-left: -305px;
+	margin-top: -60px;
+}
+

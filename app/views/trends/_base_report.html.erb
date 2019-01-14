@@ -1,0 +1,16 @@
+<div id="base_report">
+  <p>
+    &#8358; <%= @top_merchant[1] %><span> at <%= @top_merchant[0] %></span>
+    <span class="info">Top Merchant</span>
+  </p>
+  <p>
+    <%= @most_purchased[1] %><span> at <%= @most_purchased[0] %></span>
+    <span class="info">Most Purchases</span>
+  </p>
+  <p>
+    <% if @most_expensive.present? %>
+      &#8358; <%= @most_expensive.amount %><span> at <%= @most_expensive.description %></span>
+    <% end %>
+    <span class="info">Most Expensive per Visit</span>
+  </p>
+</div>

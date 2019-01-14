@@ -1,0 +1,210 @@
+@import 'mixins';
+
+#dashboard {
+  padding-top: 20px;
+  clear: both;
+
+  aside {
+    @include inline-block;
+    width: 260px;
+    vertical-align: top;
+
+    .left-side {
+      @include box-sizing;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 20px;
+
+      h3 {
+        margin: 5px 0;
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  #current_user {
+    img {
+      @include inline-block;
+      @include radius(3px);
+      margin-right: 10px;
+      vertical-align: top;
+      max-width: 65px;
+      max-height: 65px;
+    }
+    .main_info {
+      margin-bottom: 15px;
+
+      .user_info {
+        @include inline-block;
+        @include box-sizing;
+        max-width: 140px;
+        vertical-align: top;
+        color: #3e4050;
+        word-wrap: break-word;
+
+        .user_address {
+          display: block;
+          margin-top: 15px;
+          padding-left: 13px;
+          font-size: 11px;
+          color: #a1a1a1;
+          background: image-url('ico/address.png') left 0 no-repeat;
+        }
+      }
+    }
+
+    .test_info {
+      margin-bottom: 20px;
+
+      .test_progress {
+        .item {
+          .start, .end {
+            display: none;
+          }
+
+          .progress {
+            @include radius (10px);
+            height: 6px;
+            border: 1px solid #e3e3e3;
+            background-color: #efefef;
+
+            .active_bar {
+              height: 6px;
+              background: #9078b3;
+            }
+          }
+        }
+      }
+    }
+
+    .totems {
+      font-size: 14px;
+      font-family: helvetica, verdana, arial, sans-serif;
+
+      span {
+        color: #a1a1a1;
+      }
+
+      > div {
+        margin-top: 10px;
+      }
+
+      .totem {
+        @include inline-block;
+        margin-right: 7px;
+        height: 60px;
+        width: 45px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: image-url('bg/totems/totem.png');
+
+        &.first { background-image: image-url('bg/totems/first.png'); }
+        &.second { background-image: image-url('bg/totems/second.png'); }
+        &.third { background-image: image-url('bg/totems/third.png'); }
+      }
+    }
+  }
+
+  #user-info {
+    @include inline-block;
+    width: 715px;
+    margin-left: 15px;
+    vertical-align: top;
+
+    .block.right {
+      margin: 0 0 10px 0;
+
+      > div {
+        margin-top: 50px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+      }
+
+      h2 + span {
+        @include inline-block;
+        margin-bottom: 2 0px;
+        font-size: 11px;
+        color: #9a9999;
+      }
+
+      .dashboard.budgets {
+        margin-top: 20px;
+
+        .item {
+          margin-top: 10px;
+          font-size: 12px;
+          line-height: 16px;
+          color: #9a9999;
+        }
+
+        .category, .budget, .left-over, .progress, .progress-range {
+          @include inline-block;
+          @include box-sizing;
+          margin: 0 5px;
+          vertical-align: top;
+          font-size: 11px;
+          color: #9a9999;
+          text-align: right;
+        }
+
+        .category {
+          width: 140px;
+        }
+
+        .progress, .progress-range {
+          width: 365px;
+          padding: 0;
+          height: 18px;
+        }
+
+        .budget {
+          width: 55px;
+        }
+
+        .left-over {
+          width: 55px;
+        }
+
+        .links {
+          font-size: 12px;
+        }
+
+        .progress-range {
+          text-align: left;
+
+          span {
+            float: right;
+          }
+        }
+      }
+    }
+
+    #goals {
+      h2 {
+        margin-bottom: 15px;
+      }
+
+      .goal-item {
+        @include inline-block;
+        width: 115px;
+        text-align: center;
+        font-family: Helvetica,Arial,sans-serif;
+        vertical-align: top;
+
+        span {
+          font-size: 11px;
+          color: #9a9999;
+        }
+      }
+    }
+  }
+}

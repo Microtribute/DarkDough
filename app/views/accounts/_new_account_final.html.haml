@@ -1,0 +1,23 @@
+%p
+  Account's bank is
+  "
+  = @selected_bank.name
+  "
+
+  = form_for @account, :url => accounts_path do |f|
+    .field{ style: "display:inline-block;" }
+      = f.label :name
+      %br
+      = f.text_field :name
+    &nbsp;&nbsp;&nbsp;
+    .field{ style: "display:inline-block;" }
+      = f.label :status
+      %br
+      = f.select :status, Account::ACCOUNT_STATUSES
+    &nbsp;&nbsp;&nbsp;
+    .field.hidden
+      = f.label :bank
+      %br
+      = collection_select(:account, :bank_id, Bank.all, :id, :name, { selected: @selected_bank.id }, { class: "chosen" })
+    .actions
+      = f.submit

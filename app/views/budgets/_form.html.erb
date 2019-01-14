@@ -1,0 +1,40 @@
+<%= simple_form_for @budget, :validate => true do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <%= f.input :budget_type, :as => 'hidden' %>
+  <%= f.input :category, :collection => Category.send(@budget.budget_type) %>
+
+  <div class="field radios">
+    <p>When will this happen?</p>
+
+    <div class="radiogroup">
+      <%= radio_button_tag "period", "monthly" %>
+      <%= label_tag "period_monthly", "Every month" %>
+
+      <%= radio_button_tag "period", "few_month" %>
+      <%= label_tag "period_few_month", "Every few month" %>
+
+      <%= radio_button_tag "period", "once", true %>
+      <%= label_tag "period_once", "Once" %>
+    </div>
+  </div>
+
+  <%= f.input :amount %>
+  <%= f.input :tag_list %>
+  <div class="period hidden">
+    every <%= select_tag :period, options_for_select(period_select, @budget.period) %>
+  </div>
+  <div class="start">
+    <% if !@budget.new_record? && !@budget.start.nil? %>
+      <div class="hidden" id="budget_year"><%= @budget.start.year %></div>
+      <div class="hidden" id="budget_month"><%= @budget.start.month %></div>
+    <% end %>
+    My next is in <%= f.date_select :start, :use_short_month => true,
+                                            :discard_day => true,
+                                            :start_year => Time.now.year %>
+  </div>
+  <div class="field hidden"><%= f.text_field :period %></div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

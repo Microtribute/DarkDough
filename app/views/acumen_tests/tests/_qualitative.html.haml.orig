@@ -1,0 +1,354 @@
+%h2.page-title
+  TouchyFeely Test
+#full-width.grid_17.full-c
+  #test-progress
+    %span Your Progress
+    %span.progress-bar
+      %span.progress
+    .test-steps
+      %ul
+        %li.answered
+        %li
+        %li
+  .clear
+  %p
+    What information do I need to gather before taking this test?
+    %br
+      %i - Absolutely nothing but an open mind!
+  %p.duration
+    %span>
+    This evaluation should take you 10-15 mins.
+
+  #ac-test.grid_14
+    %ul
+      %li.answered
+        %span You shouldn't tell others how much you have.
+        .test_options
+          %button.strongly_disagree.mo.selected{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span A portion of your money invariably gets wasted. To think otherwise is a sign of folly or inexperience
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo.selected{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span People who are always broke are undisciplined
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span Money provides security
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span People will want to take advantage of you if they find out you are wealthy
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span People are essentially trustworthy
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span The smarter you are, the more money you'll make
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span It's important to diligently keep track of all income and expenditures
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span If I see money on the street, I'll stop to pick it up
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span Sometimes I buy company shares without knowing much about the company
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I often worry about how much things cost
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I am worried about others financial well-being
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I am not interested in theoretical discussions about my financial future
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I am disciplined with my spending
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I like to talk to acquaintances about my investments
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I am not bothered by fluctuations in the market values of my assets
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I believe people are essentially generous
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I enjoy thinking about my investments
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I understand just enough about my finances to get by
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I enjoy owning big-name stocks
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I am relaxed about investing even when the markets are down
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span If I am ripped off, I strive to get even
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I invest my money according to a plan – for example 20% stocks, 80% real estate
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I trust consensus opinion in my investing
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I always read the business section of the newspaper
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I try to keep track of economic events
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I accurately plan my expenses
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I feel very excited about the possibility of large investment gains
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span I never feel inclined to follow "hot" stock picks
+        .test_options
+          %button.strongly_disagree.mo{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}
+      %li
+        %span If I had to choose, I would prefer to
+        .test_options.padd
+          %button.grey-btn.selected{:type => "button"}
+            %span>
+            Spend more on lifestyle now and have less savings in retirement
+          %button.grey-btn{:type => "button"} Spend less on lifestyle now and have more savings in retirement
+      %li
+        %span Is your answer to the previous question reflective of how you are actually spending and saving?
+        .test_options
+          %button.grey-btn.selected{:type => "button"}
+            %span>
+            Yes
+          %button.grey-btn{:type => "button"}
+            %span>
+            No
+      %li.answered
+        %span In which of the following domains do you have unmet life goals and aspirations? Tick as appropriate.
+        .test_options.padd
+          %button.switch{:onClick => "this.style.backgroundPosition=\"55px 0px\""}
+          %span.label Recreation
+          %br
+          %button.switch{:onClick => "this.style.backgroundPosition=\"55px 0px\""}
+          %span.label Travel
+          %br
+          %button.switch{:onClick => "this.style.backgroundPosition=\"55px 0px\""}
+          %span.label Education
+          %br
+          %button.switch{:onClick => "this.style.backgroundPosition=\"55px 0px\""}
+          %span.label Family
+          %br
+          %button.switch{:onClick => "this.style.backgroundPosition=\"55px 0px\""}
+          %span.label Spirituality/Religion
+          %br
+          %button.switch{:onClick => "this.style.backgroundPosition=\"55px 0px\""}
+          %span.label Financial
+          %br
+      %li
+        %span Have financial setbacks from any of the following events significantly affected you or your parents?
+        .test_options.padd
+          %span.label The currency change during the civil war.
+          %br
+          %button.group Me
+          %button.group Parent
+          %button.group Niether
+          %button.group Both
+          .clear
+          %span.label The currency devaluation during the Structural Adjustment Programme (SAP) era.
+          %br
+          %button.group Me
+          %button.group Parent
+          %button.group Niether
+          %button.group Both
+          .clear
+          %span.label The Finance House Ponzi schemes of the 1990s.
+          %br
+          %button.group Me
+          %button.group Parent
+          %button.group Niether
+          %button.group Both
+          .clear
+          %span.label The failed banks debacle of the 1990s .
+          %br
+          %button.group Me
+          %button.group Parent
+          %button.group Niether
+          %button.group Both
+          .clear
+      %li
+        %span After you retire, what are likely to be your financial priorities?
+        %br
+          %span.sub-text Please rank from 1-3, where 1 is most important
+          .test_options.padd
+            %button.bgdotted{:type => "button"} 1
+            %button.bgdotted.selected{:type => "button"} 2
+            %button.bgdotted{:type => "button"} 3
+            %br
+            %span.label The currency devaluation during the Structural Adjustment Programme (SAP) era.
+      %li
+        %span What traditions and values in your family or community are important and should be carried on?
+        .test_options
+          %input.added{:disabled => "", :type => "text", :value => "My Good Traditions"}
+            %span.delete
+            %input.added{:disabled => "", :type => "text", :value => "My Good Traditions 2"}
+            %span.delete
+            %input{:type => "text"}
+            %span.add
+  #test-legend
+    %span.legend_icons
+    %ul
+      %li Strongly disagree
+      %li Moderately disagree
+      %li Neither agree nor disagree
+      %li Moderately agree
+      %li Strongly agree
+    %hr/
+    #small-progress
+      %span.sprogress-bar
+      %span.progress-num 7 of 36

@@ -1,0 +1,14 @@
+%h5 Results
+%p
+  - if @searched_banks.any?
+    - @searched_banks.each_with_index do |bank, index|
+      .popular-bank
+        %span
+          = index + 1
+          \.
+        = link_to bank.name, '#'
+        = form_tag accounts_path, method: "get", class: "hidden new-account-form" do
+          = text_field_tag :selected_bank_id, bank.id
+          = submit_tag "submit"
+  - else
+    There are no banks

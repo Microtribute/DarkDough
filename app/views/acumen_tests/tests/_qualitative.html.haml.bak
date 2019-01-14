@@ -1,0 +1,223 @@
+%h3 Qualitative Test
+%blockquote
+  What information do I need to gather before taking this test?
+  %br
+  &ndash; Absolutely nothing but an open mind!!!
+
+
+.notifier This evaluation should take you 10–15 mins
+
+- if test_answers[57]
+  - answer = test_answers[57]
+  .question_fields
+    %span 1
+    = f.fields_for :answers, answer do |answer_form|
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+      .question= answer.question
+
+      .answer_smiles
+        - Answer::ANSWERS.each do |key|
+          - key.each do |k,v|
+            .smile
+              = answer_form.radio_button :result, k, class: v.parameterize.underscore
+              %span
+
+
+- test_answers[0...28].each_with_index do |answer, index|
+  .question_fields
+    %span
+      = index + 2
+    = f.fields_for :answers, answer do |answer_form|
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+      .question= answer.question
+
+      .answer_smiles
+        - Answer::ANSWERS.each do |key|
+          - key.each do |k,v|
+            .smile
+              = answer_form.radio_button :result, k, class: v.parameterize.underscore
+              %span
+
+- if test_answers[28]
+  .question_fields
+    %span 30
+    - answer = test_answers[28]
+    = f.fields_for :answers, answer do |answer_form|
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+      .question= answer.question
+
+      .answer_fields
+        - Answer::ANSWERS_2.each do |key|
+          - key.each do |k,v|
+            .field{ style: 'width: 450px;' }
+              = answer_form.radio_button :result, k
+              = v
+              %span
+
+- if test_answers[29]
+  .question_fields
+    %span 31
+    - answer = test_answers[29]
+    = f.fields_for :answers, answer do |answer_form|
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+      .question= answer.question
+
+      .answer_fields
+        - Answer::ANSWERS_3.each do |key|
+          - key.each do |k,v|
+            .field{ style: 'width: 30px;' }
+              = answer_form.radio_button :result, k
+              = v
+              %span
+
+.question_fields
+  %span 32
+  .question Have financial setbacks from any of the following events significantly affected you or your parents? Tick as appropriate.
+
+  - for answer in test_answers[30...44]
+    = f.fields_for :answers, answer do |answer_form|
+      .question= answer.question
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+
+      .answer_smiles.with_fields
+        - Answer::ANSWERS_4.each do |key|
+          - key.each do |k,v|
+            .field
+              = v
+              = answer_form.radio_button :result, k
+              %span
+
+
+- if test_answers[44]
+  .question_fields
+    %span 33
+    - answer = test_answers[44]
+    = f.fields_for :answers, answer do |answer_form|
+      %p
+        = answer_form.hidden_field :code
+        = answer_form.hidden_field :question
+        .question= answer.question
+
+        .answer_smiles.with_fields
+          - Answer::ANSWERS_5.each do |key|
+            - key.each do |k,v|
+              .field
+                = answer_form.radio_button :result, k
+                = v
+                %span
+
+.question_fields.checkboxes
+  %span 34
+  .question In which of the following domains do you have unmet life goals and aspirations? Tick as appropriate.
+  - for answer in test_answers[45..50]
+    = f.fields_for :answers, answer do |answer_form|
+      .checkbox
+        = answer_form.check_box :result
+        = answer.question
+        = answer_form.hidden_field :code
+        = answer_form.hidden_field :question
+
+- if test_answers[51]
+  .question_fields
+    %span 35
+    - answer = test_answers[51]
+    = f.fields_for :answers, answer do |answer_form|
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+      .question= answer.question
+
+      .answer_fields
+        - Answer::ANSWERS_6.each do |key|
+          - key.each do |k,v|
+            .field{ style: 'width: 240px;'}
+              = answer_form.radio_button :result, k
+              = v
+              %span
+
+.question_fields
+  %span 36
+  .question
+    After you retire, what are likely to be your financial priorities?
+    .notifier Please rank from 1–3, where 1 is most important
+  .ranks
+    %span.drag_container.first 1
+    %span.drag_container.second 2
+    %span.drag_container.third 3
+
+  - if test_answers[52]
+    - answer = test_answers[52]
+    = f.fields_for :answers, answer do |answer_form|
+      .drag-field
+        = answer_form.hidden_field :code
+        = answer_form.hidden_field :question
+        %span{ class: "drag_0"}
+          Legacy
+          %i
+        = answer_form.text_field :result, class: "drag_input first"
+        .question= answer.question
+
+  - if test_answers[53]
+    - answer = test_answers[53]
+    = f.fields_for :answers, answer do |answer_form|
+      .drag-field
+        = answer_form.hidden_field :code
+        = answer_form.hidden_field :question
+        %span{ class: "drag_1"}
+          Lifestyle
+          %i
+        = answer_form.text_field :result, class: "drag_input second"
+        .question= answer.question
+
+  - if test_answers[54]
+    - answer = test_answers[54]
+    = f.fields_for :answers, answer do |answer_form|
+      .drag-field
+        = answer_form.hidden_field :code
+        = answer_form.hidden_field :question
+        %span{ class: "drag_2"}
+          Thrift
+          %i
+        = answer_form.text_field :result, class: "drag_input third"
+        .question= answer.question
+
+
+- if test_answers[55]
+  - answer = test_answers[55]
+  %p
+    = f.fields_for :answers, answer do |answer_form|
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+      = answer.question
+      %br
+      %br
+      = answer_form.text_field :result, :class => "custom_result"
+      %span.result_fields
+        - 5.times do |i|
+          = i+1
+          \.
+          = text_field_tag :result_field
+          %br
+        %br
+
+
+- if test_answers[56]
+  .question_fields
+    %span 38
+    - answer = test_answers[56]
+    = f.fields_for :answers, answer do |answer_form|
+
+      = answer_form.hidden_field :code
+      = answer_form.hidden_field :question
+      .question= answer.question
+
+      .answer_smiles
+        - Answer::ANSWERS.each do |key|
+          - key.each do |k,v|
+            .smile
+              = answer_form.radio_button :result, k, class: v.parameterize.underscore
+              %span

@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title= title
+    %link{:href => "/assets/favicon.ico", :rel => "shortcut icon"}
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = render :partial => 'layouts/webreep'
+    = render :partial => 'layouts/typekit'
+    %meta{:content => "4_j70O_xIftPsQxnpuH4j4cNy87tO9iyEj_NUJpSadI", :name => "google-site-verification"}/
+    = csrf_meta_tags
+  %body
+    #container.container_24
+      = render :partial => 'layouts/header'
+      = yield
+      

@@ -1,0 +1,51 @@
+.block
+  - if @goal.finished?
+    %p
+      %b Status: finished
+
+  %p
+    %b Title:
+    = @goal.title
+
+  %p
+    %b Category:
+    = @goal.category
+
+  %p
+    %b Amount:
+    = @goal.amount
+
+  %p
+    %b Planned date:
+    = @goal.planned_date
+
+  %p
+    %b Contribution:
+    = @goal.contribution
+
+  %p
+    %b Todays balance:
+    = @goal.todays_balance
+
+  - if @goal.accounts.any?
+    %p
+      %B Accounts:
+    %table
+      %thead
+      %tr
+        %th Account
+        %th Amount
+      %tbody
+      - @goal.accounts.each do |account|
+        %tr
+          %td= account.name
+          %td= account.amount
+      %tfoot
+      %tr
+        %td Total:
+        %td= @goal.available_balance
+
+  - unless @goal.finished?
+    = edit_goal(@goal)
+    |
+  = link_to 'Back', goals_path

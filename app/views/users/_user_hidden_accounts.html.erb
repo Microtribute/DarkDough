@@ -1,0 +1,32 @@
+<div class="block right tabbed hidden_accounts">
+  <h4>Hide accounts and tags</h4>
+  <span class="info">
+    Hide accounts or tags (like "reimbursable") to exclude them from all of Mint or just Planning &amp; Trends. Your data is still there,
+    just hidden.
+  </span>
+
+  <h5>Your account</h5>
+  <span class="info">
+    Switch off the accounts you want to hide.
+  </span>
+  <ul class="account">
+    <% @accounts.each do |account| %>
+      <li>
+        <%= form_for current_user, :remote => true do |f| -%>
+          <%= f.fields_for :accounts, account do |account_fields| -%>
+            <%= account_fields.check_box :status, {}, 'active', 'inactive' %>
+          <% end -%>
+        <% end -%>
+        <strong><%= Bank.find_by_id(account.bank_id).name %></strong>
+        <%= account.name %>
+      </li>
+    <% end %>
+  </ul>
+
+  <h5>Your tags</h5>
+  <span class="info">
+    Switch off the tags you want to hide.
+  </span>
+  <br /><br />
+  Tags are not implemented yet
+</div>

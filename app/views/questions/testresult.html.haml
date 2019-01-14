@@ -1,0 +1,15 @@
+%script{:src=>"/assets/_cashflow.js"}
+:javascript
+	var g_testresult_path = "#{testresult_path}";
+
+%h2.page-title
+	Test Result Page
+#full-width.grid_17.full-c
+	= render :partial=>'questions/shared/progress', :locals=>{:final=> true}
+	#ac-test
+		Design will be coming soon...
+		%br
+		%br
+		%br
+		%br
+		=link_to 'Go Back', cashflow_path, :class=>'grey-btn goback-btn'

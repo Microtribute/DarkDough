@@ -1,0 +1,42 @@
+#test-progress
+	%span Your Progress
+	%span.progress-bar
+		- progress_class = "first"
+		- if @tests.size>=@touchfeely_count
+			- progress_class = "first"
+		- if @tests.size>@touchfeely_count && @tests.size>=@hardfacts_count
+			- progress_class = "second"
+		- if @tests.size>@touchfeely_count && @tests.size>@hardfacts_count
+			- progress_class = "third"
+		%span.progress{:class=>progress_class}
+	.test-steps
+		%ul
+			%li{:class=>((@tests.size>=@touchfeely_count)?"answered":"")}
+			%li{:class=>((@tests.size>@touchfeely_count && @tests.size>=@hardfacts_count)?"answered":"")}
+			%li{:class=>((defined?(final)!=nil && final==true)?"answered":"")}
+.clear
+
+- if defined?(final)!=nil && final==true
+	
+-else
+	%p
+		What information do I need to gather before taking this test?
+		%br
+			%i - Life insurance policy
+			%br
+			%i - Bank account statement
+			%br
+			%i - Certificate(s) of deposit
+			%br
+			%i - Brokerage account statement
+			%br
+			%i - Inventory of big ticket items in home
+			%br
+			%i - Outstanding loan balances
+			%br
+			%i - Investment term sheets (for entrepreneurs who used outside capital)
+			%br
+	%p.duration
+		%span>
+		This evaluation should take you 10-15 mins.
+	

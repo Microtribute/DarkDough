@@ -1,0 +1,24 @@
+#carousel h5, #carousel .interactive-permalink, #nav-intro {
+	display: none;
+}
+
+#ie {
+	background-image: url('/images/ie.png') !important;
+	width: 1400px !important;
+	position: absolute !important;
+	left: 50% !important;
+	margin-left: -700px !important;
+	height: 450px;
+}
+
+#links {
+	font-size: 24px;
+	position: absolute;
+	top: 365px;
+	left: 175px;
+	color: blue;
+}
+
+#to_cluster.ie {
+	padding-left: 30px !important;
+}

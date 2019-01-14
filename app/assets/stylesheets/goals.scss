@@ -1,0 +1,24 @@
+@import 'mixins';
+
+.block.goal .chosen { min-width: 180px; }
+
+.available_accounts.disabled { color: #ccc; }
+
+#choose_goal_category a {
+  @include inline-block;
+  height: 40px;
+  width: 100px;
+  border: 1px solid #eee;
+  background-color: #fff;
+  padding: 30px 5px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  vertical-align: bottom;
+  text-decoration: none;
+
+  &:hover { background-color: #eee; }
+}
+
+
+#goals_list table { width: 100%; }

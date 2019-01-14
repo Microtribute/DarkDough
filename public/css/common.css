@@ -1,0 +1,62 @@
+/* CSS Document */
+
+.hidden{
+	display:none;
+}
+
+.loading{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -21px;
+	margin-left: -21px;
+	width: 42px;
+	height: 42px;
+	background: url('/images/ajax-loader.gif') center center no-repeat;
+	opacity: 0.8;
+	cursor: pointer;
+	z-index: 10000;
+	display: none;
+	background-color: white;
+	border-radius: 7px;
+}
+
+.overlay{
+	background-color: white;
+	opacity: 0.5;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+	z-index: 9999;
+}
+
+.loading_mini{
+	position: absolute;
+	width: 42px;
+	height: 42px;
+	background: url('/images/ajax-loader-small.gif') center center no-repeat;
+	opacity: 0.8;
+	cursor: pointer;
+	z-index: 10000;
+	display: none;
+	background-color: white;
+	border-radius: 7px;
+}
+
+.overlay_mini{
+	background-color: white;
+	opacity: 0.1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: none;
+	z-index: 9999;
+}
+

@@ -1,0 +1,85 @@
+<div class="spending_container bubble-info active">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Spending</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @spending_transactions.any? %>
+        <% categorized(@spending_transactions).each do |spending| %>
+          <tr>
+            <td><%= spending[0] %></td>
+            <td>&#8358; <%= spending[1] %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>&#8358; <%= @spending_amount %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div class="income_container bubble-info">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Income</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @income_transactions.any? %>
+        <% categorized(@income_transactions).each do |key, val| %>
+          <tr>
+            <td><%= key %></td>
+            <td>&#8358; <%= @income_amount %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>&#8358; <%= @income_amount %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div class="net_income_container bubble-info">
+  <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Income</th>
+        <th>Spendint</th>
+        <th>Net</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <!--
+          TODO set month
+        -->
+        <td>Month</td>
+        <td>&#8358; <%= @income_amount %></td>
+        <td>&#8358; <%= @spending_amount %></td>
+        <td>&#8358; <%= @income_amount - @spending_amount %></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Total</td>
+        <td>&#8358; <%= @income_amount %></td>
+        <td>&#8358; <%= @spending_amount %></td>
+        <td>&#8358; <%= @income_amount - @spending_amount %></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

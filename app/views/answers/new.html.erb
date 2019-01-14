@@ -1,0 +1,13 @@
+<h1>Answers form should be placed here</h1>
+
+<p>In process...</p>
+
+<%= form_for [current_user, @acumen_test, @answer] do |f| -%>
+  <%= render 'shared/error_messages', :object => f.object %>
+  
+  <%= f.text_field :answer_code, :value =>  '2' %>
+
+  <%= f.label :answer, "Answer" %>
+  <%= f.text_field :answer %>
+  <%= f.submit "Submit" %>
+<% end -%>

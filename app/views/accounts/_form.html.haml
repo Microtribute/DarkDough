@@ -1,0 +1,19 @@
+= form_for(@account) do |f|
+  = render 'shared/error_messages', object: f.object
+
+  .field{ style: "display:inline-block;" }
+    = f.label :name
+    %br
+    = f.text_field :name
+  &nbsp;&nbsp;&nbsp;
+  .field{ style: "display:inline-block;" }
+    = f.label :status
+    %br
+    = f.select :status, Account::ACCOUNT_STATUSES
+  &nbsp;&nbsp;&nbsp;
+  .field{ style: "display:inline-block;" }
+    = f.label :bank
+    %br
+    = collection_select(:account, :bank_id, Bank.all, :id, :name, {}, { class: "chosen" })
+  .actions
+    = f.submit

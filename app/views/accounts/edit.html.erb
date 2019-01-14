@@ -1,0 +1,9 @@
+<h1>Editing account</h1>
+<div class="block">
+  <div  style="float:right;"><%= link_to "Account edit information", help_create_account_path %></div>
+
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @account %> |
+  <%= link_to 'Back', list_accounts_path %>
+</div>

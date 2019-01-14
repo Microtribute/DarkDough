@@ -1,0 +1,13 @@
+%script{:src => "//use.typekit.net/vpw0ezg.js", :type => "text/javascript"}
+:javascript
+  try{Typekit.load({ 
+      active : function() {
+        $(document).ready(function(){ 
+          cluster.init('to_cluster')
+         })   
+      },
+      inactive: function() {
+        //do something else
+      }
+    }) 
+    }catch(e){}

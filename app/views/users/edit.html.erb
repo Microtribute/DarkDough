@@ -1,0 +1,44 @@
+<h1>Edit profile</h1>
+
+<div class="block">
+  <br />
+  <%= form_for @user, :html => { :mulitpart => true } do |f| -%>
+    <%= render 'shared/error_messages', :object => f.object %>
+
+    <div>
+      <%= f.label :first_name, "First Name" %><br />
+      <%= f.text_field :first_name %></div>
+
+    <div>
+      <%= f.label :last_name, "Last Name" %><br />
+      <%= f.text_field :last_name %></div>
+
+    <div>
+      <%= f.label :email, "Email" %><br />
+      <%= f.text_field :email %></div>
+
+    <div>
+      <%= f.label :phone_number, "Phone number" %><br />
+      <%= f.text_field :phone_number %></div>
+
+    <div>
+      <%= f.label :country, "Country" %><br />
+      <%= f.select :country, Carmen::country_names %></div>
+
+    <div>
+      <%= f.label :age, "Age" %>
+      <%= f.select :age, User::USER_AGES %></div>
+
+    <div>
+      <%= f.label :gender, "Gender" %>
+      <%= f.select :gender, User::GENDERS %></div>
+
+    <div>
+      <%= f.label :avatar, "Avatar" %>
+      <%= f.file_field :avatar %></div>
+
+    <br />
+    <div><%= f.submit "Update" %></div>
+
+  <% end -%>
+</div>

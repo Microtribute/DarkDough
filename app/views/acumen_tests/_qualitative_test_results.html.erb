@@ -1,0 +1,84 @@
+<h3>Qualitative test result</h3>
+
+<p>
+  <strong>Worry:</strong>
+  Worry refers to financial anxiety. High scorers experience more financial stress when
+  thinking about their finances. It usually helps to take a long-term view and reduce the frequency
+  of evaluation of your assets (such as stocks) for changes in value. They see the dark cloud in every
+  silver lining and are obsessed with risk management. Taking a passive approach to their investments
+  is usually an effective coping strategy. Low scorers on the other hand may be financially reckless
+  and may exhibit risk-seeking behaviour.<br />
+  YOUR LEVEL OF WORRY IS
+  <i>
+    <%= acumen_test.worry_test_resulting %>
+    (<%= acumen_test.qualitative_result[:worry] %>)
+  </i><br />
+  You are in <i><%= set_user_group(acumen_test.worry_test_resulting) %></i> group
+</p>
+
+<p>
+  <strong>Motivation:</strong>
+  Motivation refers to the level of interest in learning about investments, keeping track
+  of economic trends, and managing money. High scorers are likely to have some enthusiasm for managing
+  their own finances. They are also more likely to be self-starters who will perform requested research
+  and take an active interest in managing their money. Low scorers typically require some education.
+  Low scorers will lose interest in managing their finances if it is perceived as dull or tedious.<br />
+  YOU LEVEL OF MOTIVATION IS
+  <i>
+    <%= acumen_test.motivation_test_resulting %>
+    (<%= acumen_test.qualitative_result[:motivation] %>)
+  </i><br />
+  You are in <i><%= set_user_group(acumen_test.motivation_test_resulting) %></i> group
+</p>
+
+<p>
+  <strong>Self Interest:</strong>
+  Self-interested people will be more financially independent. High scorers are more
+  likely to be autonomous decision makers, even to the point of distrusting outside financial advisors’
+  intentions. Additionally, they abhor whatever may feasibly be construed as wastage such as high fees
+  for a service or even charitable giving. Low scorers are more financially open and accommodative
+  towards others. Low scorers may also be more trusting and generous, which makes them ideal targets
+  for inappropriate requests for money from relatives and friends. They may also entertain feelings of
+  guilt over their wealth and may be somewhat indecisive when considering financial plans.<br />
+  YOUR LEVEL OF SELF INTEREST IS
+  <i>
+    <%= acumen_test.self_interest_test_resulting %>
+    (<%= acumen_test.qualitative_result[:self_interest] %>)
+  </i><br />
+  You are in <i><%= set_user_group(acumen_test.self_interest_test_resulting) %></i> group
+</p>
+
+<p>
+  <strong>Discipline:</strong>
+  Discipline refers to the ability to organise your finances and prepare for financial
+  contingencies. Discipline is necessary in order to follow a financial plan. High scorers are more
+  likely to stay consistent with a plan. Low scorers may not have prioritised financial planning in
+  the past. Low scorers will be helped if they can learn to closely associate their emotions with their
+  planning. For example, they could train themselves to experience guilt when they make an impulsive
+  purchase that jeopardises their budget. Also by learning how to see opportunity in the organisation
+  of their finances, and working to better manage emotional blocks, their financial planning will become
+  more effortless and even fun.<br />
+  YOUR LEVEL OF DISCIPLINE IS
+  <i>
+    <%= acumen_test.discipline_test_resulting %>
+    (<%= acumen_test.qualitative_result[:discipline] %>)
+  </i><br />
+  You are in <i><%= set_user_group(acumen_test.discipline_test_resulting) %></i> group
+</p>
+
+<p>
+  <strong>Thrill Seeking:</strong>
+  Thrill seeking as the name implies refers to people who seek excitement even in
+  their investing and financial planning. Financial thrill seeking is not necessarily always bad as
+  it can motivate people to unearth opportunities. Thrill seeking can be a problem when it leads to
+  imprudence and excessive risk taking. High scorers are more inclined to pick volatile stocks, neglect
+  savings, attach undue importance to tips, exhibit a marked preference for high-risk/high-reward
+  strategies and have unsustainably high expectations. Low scorers are likely to be more sober and
+  deliberate decision makers.<br />
+  YOUR LEVEL OF THRILL SEEKING IS
+  <i>
+    <%= acumen_test.thrill_seeking_test_resulting %>
+    (<%= acumen_test.qualitative_result[:thrill_seeking] %>)
+  </i><br />
+  You are in <i><%= set_user_group(acumen_test.thrill_seeking_test_resulting) %></i> group
+</p>

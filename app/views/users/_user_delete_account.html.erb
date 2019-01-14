@@ -1,0 +1,13 @@
+<div class="block right tabbed delete_account">
+  <h4>Delete account</h4>
+  <p class="info">
+    We will miss you as a customer. If there is anything we can do to keep you with us, please let us know. Once you delete
+    your account, Budget 24-7 will automatically expunge your financial information within 48 hours. You will receive
+    confirmation via email.
+  </p>
+
+  <div class="buttons">
+    <%= link_to "Delete my account", registration_path(current_user), :confirm => "Are you sure?", :method => :delete, :class => "button accented" %>
+    <%= link_to "Help with a problem", contact_us_path, :class => "button" %>
+  </div>
+</div>

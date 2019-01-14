@@ -1,0 +1,34 @@
+<div id="by_category_partial" class="active">
+  <div class="spending_container svg bubble-info active">
+    <% unless @spending_transactions.any? %>
+      <div>You do not have any spending transactions in this period.</div>
+    <% end %>
+    <div class="hidden spending json"><%= @spending_by_category_json %></div>
+    <div class="hidden spending sum"><%= @spending_amount %></div>
+  </div>
+
+  <div class="income_container svg bubble-info by_category">
+    <% unless @income_transactions.any? %>
+      <div>You do not have any income transactions in this period.</div>
+    <% end %>
+    <div class="hidden income json"><%= @income_by_category_json %></div>
+    <div class="hidden income sum"><%= @income_amount %></div>
+  </div>
+
+  <div class="net_income_containe svg bubble-info by_category" style="vertical-align: top;">
+    Your income $<%= @income_amount %><br />
+    Your spending $<%= @spending_amount %><br />
+  </div>
+
+  <div class="assets_containe svg bubble-info by_category">
+    No assets now
+  </div>
+
+  <div class="debts_containe svg bubble-info by_category">
+    No debts now
+  </div>
+
+  <div class="net_worth_containe svg bubble-info by_category">
+    No Net Worth now
+  </div>
+</div>

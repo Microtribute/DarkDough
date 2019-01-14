@@ -1,0 +1,64 @@
+%script{:src => "/js/jquery.pstrength-min.1.2.js"}
+:javascript
+	$(function() {
+		$('#user_password').pstrength();
+		var s = $('.pstrength-bar').wrap("<p>").parent().html();
+		$('.pstrength-bar').remove();
+		$('.password-strength .bar1').html(s);
+	});
+.confirmation
+	.title
+		Account Verification
+	= simple_form_for(resource, as: resource_name, url: verification_path ) do |f|
+		= f.hidden_field :confirmation_token, :value=>@confirmation_token
+		.conf-form
+			.info
+				.desc
+					Please enter the verification code sent to you via SMS
+				.clear
+				.code
+					%label
+						SMS code:
+					= f.input :sms, :label=>false, :required=>true
+				.clear
+				- if flash[:error]
+					#error_explanation
+						.error
+							= flash[:error]
+				.clear
+				.desc.second
+					Choose a Strong Password
+					%br/
+					%span
+						(use combination of lower & upper case letters with numbers)
+				.clear
+				.password
+					%label
+						Password
+					= f.input :password, :label=>false, :required=>true
+					.password-strength
+						.strength-desc
+							Password Strength
+						.bar1
+							
+							
+				.clear
+				.password.confirm
+					%label
+						Confirm Password
+					= f.input :password, :label=>false, :required=>true
+				.clear
+				.remember-me
+					%label
+					%input{:type=>'checkbox'}
+					%span
+						Remember me
+					.clear
+					.desc.third
+						( Not Recommended on Shared Computers )
+				.clear
+				.actions
+					= f.submit 'Sign in', :class=>'signin-btn btn'
+				.clear
+				.remark
+					=link_to 'Resend Activation link?','#'

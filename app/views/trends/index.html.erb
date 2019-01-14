@@ -1,0 +1,37 @@
+<h1>Trends</h1>
+
+<div class="block wide" id="trends">
+  <div id="trends_calendar">
+    <div class="tl-months"></div>
+    <div class="predefined">
+      <%= link_to "This month", '#', :id => "timeline_one_month" %>
+      <%= link_to "Last month", '#', :id => "timeline_last_month" %>
+      <%= link_to "This year", '#', :id => "timeline_year" %>
+      <%= link_to "All time", '#', :id => "timeline_all" %>
+    </div>
+    <div id="calendar">
+      <div id="timeline"></div><br />
+      <%= form_tag trends_path, :method => "get", :id => "trends_search", :class => "hidden" do %>
+        <%= text_field_tag :trends_start, params[:trends_start] %>
+        <%= text_field_tag :trends_end, params[:trends_end] %>
+        <%= submit_tag "Search", :id => "trends_search" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="graph">
+    <%= render :partial => 'trends_menu' %>
+    <div id="trends_statistic" class="">
+      <%= render :partial => 'trends' %>
+    </div>
+  </div>
+
+  <div id="report">
+    <h4>Report</h4>
+    <%= render :partial => 'base_report' %>
+    <div id="sub_category_data">
+      <%= render :partial => 'sub_category_data' %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,51 @@
+<script type='text/javascript'>(function () {
+    function loadWebreep() {
+			return;
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://api.webreep.com/Feedback/Get/3508ed12-7cf5-472d-87cb-215421267d77';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    }
+
+    if (window.attachEvent) {
+        window.attachEvent('onload', loadWebreep);
+    } else {
+        window.addEventListener('load', loadWebreep, false);
+    }
+})();</script>
+<div id="spending">
+  <h3>Spending</h3>
+
+  <div class="amount">
+    &#8358; <%= current_user.spending_amount %> spent of
+    &#8358; <%= @spending_budgets.map(&:amount).sum %>
+  </div>
+
+  <%= link_to "Create a new budget", new_budget_path(:budget_type => 'spending'), :class => "new-budget" %>
+
+  <% if @spending_budgets.any? %>
+      <div id="spending-list">
+        <% @spending_budgets.each do |spending| %>
+            <div class="spending item">
+              <%= spending.category.name %>
+              <%= link_to "edit", edit_budget_path(spending, :category => spending.category), :class => "edit" %>
+              <div class="spent">
+                <div class="b-start">
+                  &#8358;
+                  <div class="start"><%= current_user.transactions_sum_by_category(spending.category) %></div>
+                </div>
+                &nbsp;&nbsp;of&nbsp;&nbsp;
+                <div class="b-end">
+                  &#8358;
+                  <div class="end"><%= spending.amount %></div>
+                </div>
+              </div>
+              <div class="progress"></div>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+

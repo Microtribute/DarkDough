@@ -1,0 +1,35 @@
+%script{:src=>"/assets/_cashflow.js"}
+:javascript
+	var g_testresult_path = "#{testresult_path}";
+
+%h2.page-title
+	Statement of Cash Inflows & Outflows
+#full-width.grid_17.full-c
+	= render :partial=>'questions/shared/progress'
+	#ac-test
+		=form_for @test do |f|
+			= f.hidden_field :answer_sort, :value=>'CASHFLOW'
+			.cashflow-income
+				%h2
+					Income (cash inflows)
+				=render :partial=>'questions/shared/cashflow_input', :locals=>{:id=>"_income"}
+			.clear
+			%br
+			.cashflow-expenditures
+				%h2
+					Expenditures (cash outflows)
+				=render :partial=>'questions/shared/cashflow_input', :locals=>{:id=>"_expenditures"}
+			.clear
+			%br
+			.cashflow-finally_questions
+				%h2
+					Finally, 2 simple questions
+				=render :partial=>'questions/shared/cashflow_input', :locals=>{:id=>"_finally_questions"}
+			.clear
+			
+		%br
+		%br
+		%br
+		%br
+		=link_to 'Go Back', hardfacts_path, :class=>'grey-btn goback-btn'
+		=link_to 'Proceed', 'javascript:void(0)', :class=>'grey-btn proceed-btn'

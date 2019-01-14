@@ -1,0 +1,17 @@
+<h4><span id="filter_category">Spending</span> by <span id="spend_by">category</span></h4>
+<menu>
+  <ul id="main_filter">
+    <li class="active"><%= link_to "Spending", '#', :id => "spending" %></li>
+    <li><%= link_to "Income", '#', :id => "income" %></li>
+    <li><%= link_to "Net income", '#', :id => "net_income", :class => "net_income" %></li>
+    <!-- <li><%#= link_to "Assets", '#', :id => "assets" %></li>
+    <li><%#= link_to "Debts", '#', :id => "debts" %></li>
+    <li><%#= link_to "Net worth", '#', :id => "net_worth" %></li> -->
+  </ul>
+  <ul id="sub_filter">
+    <li><%= link_to "Over Time", '#', :id => "over_time" %></li>
+    <li class="active"><%= link_to "By Category", '#', :id => "by_category" %></li>
+    <li><%= link_to "By Merchant", '#', :id => "by_merchant" %></li>
+    <!-- <li><%#= link_to "By Tag", '#', :id => "by_tag" %></li> -->
+  </ul>
+</menu>

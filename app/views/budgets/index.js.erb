@@ -1,0 +1,21 @@
+$("#budget-content-right").html("<%= escape_javascript(render :partial => "budgets") %>");
+
+$('#create_new_budget').dialog({
+  autoOpen: false,
+  resizable: false,
+  modal: true,
+  minWidth: 490,
+  dialogClass: 'my_dialog',
+  title: "New budget",
+  buttons: {
+    'Save': function() {
+      $('#new_budget').submit()
+      $(this).dialog('close')
+    },
+    'Cancel': function() {
+      $(this).dialog('close')
+    }
+  }
+})
+
+$('#result').progressBar();

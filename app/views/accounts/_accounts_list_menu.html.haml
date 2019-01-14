@@ -1,0 +1,13 @@
+%menu.left-side
+  %ul
+    = link_to "Add a new account", '#', :class => "add-account"
+    %li
+      = link_to "#", class: "all active" do
+        All accounts
+        %span= pluralize(@accounts.count, 'account')
+        %i
+    - @accounts.each do |account|
+      %li
+        = link_to "#", class: account.id do
+          = account.name
+          %i

@@ -1,0 +1,37 @@
+<div id="incomes">
+  <h3>Income</h3>
+  <div class="amount">
+    <div class="sum">
+      <div class="cur">&#8358;</div><%= current_user.transactions_sum_by_category("Income") %>
+    </div>
+    so far of
+    <div class="sum">
+      <div class="cur">&#8358;</div><%= @income_budgets.map(&:amount).sum %>
+    </div>
+  </div>
+
+  <%= link_to 'Create a new income', new_budget_path(:budget_type => 'income'), :data => {:toggle => 'modal', :target => '#new_budget-modal'}, :class => "new-budget add_new", :title => "New budget" %>
+  <div id="new_budget-modal" class="modal" style="display:none">
+    <div class="modal-body">
+      <p>Loading…</p>
+    </div>
+  </div>
+  <% if @income_budgets.any? %>
+    <div id="incomes-list">
+      <% @income_budgets.each do |income| %>
+        <div class="income item">
+          <%= income.category.name %> <%= link_to "edit", edit_budget_path(income), :class => "edit" %>
+          <div class="spent">
+            <div class="b-start">
+              &#8358;<div class="start"><%= current_user.transactions_sum_by_category("Income") %></div>
+            </div> &nbsp;&nbsp;of&nbsp;&nbsp;
+            <div class="b-end">
+              &#8358;<div class="end"><%= @income_budgets.map(&:amount).sum %></div>
+            </div>
+          </div>
+          <div class="progress"></div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

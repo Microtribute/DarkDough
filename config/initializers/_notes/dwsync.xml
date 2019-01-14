@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="active_admin.rb" local="129985604090000000" remote="129999857910000000" testing="0" />
+<file name="amazon_ses.rb" local="129999838670664922" remote="129999857930000000" testing="0" />
+<file name="backtrace_silencers.rb" local="129985604090000000" remote="129999857940000000" testing="0" />
+<file name="client_side_validations.rb" local="129985604090000000" remote="129999857960000000" testing="0" />
+<file name="devise.rb" local="130001542575884151" remote="130001542790000000" testing="0" />
+<file name="inflections.rb" local="129985604090000000" remote="129999857990000000" testing="0" />
+<file name="mime_types.rb" local="129985604090000000" remote="129999858000000000" testing="0" />
+<file name="quiet_assets.rb" local="129985604090000000" remote="129999858020000000" testing="0" />
+<file name="rolify.rb" local="129985604090000000" remote="129999858030000000" testing="0" />
+<file name="secret_token.rb" local="129985604090000000" remote="129999858050000000" testing="0" />
+<file name="session_store.rb" local="129985604090000000" remote="129999858060000000" testing="0" />
+<file name="squeel.rb" local="129985604090000000" remote="129999858070000000" testing="0" />
+<file name="wrap_parameters.rb" local="129985604090000000" remote="129999858090000000" testing="0" />
+<file name="recaptcha.rb" local="130000197806546319" remote="130000211570000000" testing="0" />
+</dwsync>

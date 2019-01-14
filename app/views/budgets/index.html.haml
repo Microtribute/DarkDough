@@ -1,0 +1,47 @@
+#content.grid_24
+  %h2.page-title
+    Life Budgets
+    %sup TM
+  / Right Content
+  #right-content.grid_17.full-c
+    %h3.content-title November - December, 2012
+    
+    #budget-header
+      .budgets_calendar
+        .budgets-months
+        .predefined
+          = link_to "This month", '#', :id => "timeline_one_month"
+          = link_to "Last month", '#', :id => "timeline_last_month"
+          = link_to "This year", '#', :id => "timeline_year"
+          = link_to "All time", '#', :id => "timeline_all"
+        #calendar
+          #budgets_timeline
+          %br/
+          = form_tag budgets_path, :method => "get", :id => "budgets_search", :class => "hidden" do
+            = text_field_tag :budgets_start, params[:budgets_start]
+            = text_field_tag :budgets_end, params[:budgets_end]
+            = submit_tag "Search", :id => "budgets_search"
+    / Budget Right Content
+    #budget-content-right.grid_17
+      = render :partial => 'budgets'
+    / End Budget Right Content
+    / Left Content
+    #left-content
+      #budget-details.grid_6
+        %h2.title You’ve budgeted
+        %ul
+          %ul
+            %li.sub_title Income, ₦
+            %li.do_count.positive= @budgets.income.map(&:amount).sum
+          %ul
+            %li.sub_title Spending, ₦
+            %li.do_count.negative= @budgets.spending.map(&:amount).sum
+          %ul
+            %li.sub_title Goals, ₦
+            %li.do_count 0
+          %ul
+            %li.sub_title Left Over, ₦
+            %li.do_count.positive= (@budgets.income.map(&:amount).sum + @budgets.spending.map(&:amount).sum)
+    / End Left Content
+  / End Right Content
+/ End Content

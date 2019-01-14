@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title= title
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    = javascript_include_rpx(user_session_url)
+
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+  %body#public
+    #main
+      %header
+        %h1#to_cluster BUDGET 24-7
+        %span Plan your finances. Socially.
+      #wrapper
+        = yield
+      %footer
+        Another really helpful service brought to you by the insanely
+        %i talented team
+        at
+        %i Bellerophon

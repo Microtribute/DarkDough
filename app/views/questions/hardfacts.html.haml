@@ -1,0 +1,56 @@
+%script{:src=>"/assets/_hardfacts.js"}
+:javascript
+	var g_cashflow_path = "#{cashflow_path}";
+
+%h2.page-title
+	HardFacts
+#full-width.grid_17.full-c
+	= render :partial=>'questions/shared/progress'
+	#ac-test
+		=form_for @test do |f|
+			= f.hidden_field :answer_sort, :value=>'HARDFACTS'
+			.hardfacts-assets
+				%h2
+					Assets
+				- n = 0
+				- @questions[:_assets].each do |k,v|
+					- n = n + 1
+					.cell{:class=>((n%2==0)?"right":"")}
+						.title
+							= v[:sentence]
+							- if v[:type] == "_presence"
+								%span *
+						.unit
+						.input
+							- name = "#{Question::HARDFACTS[:_prefix]}_#{v[:id]}"
+							%input.question-id{:type=>'hidden', :name=>"question_id[]", :value=>"#{name}"}
+							- value = ""
+							- value = @tests[:"#{name}"][:answer] if @tests[:"#{name}"]
+							%input.answer{:type=>'text', :name=>"answer[]", :class=>((v[:type] == "_presence")?'required':''), :value=>value}
+			.clear
+			.hardfacts-liabilities
+				%h2
+					Liabilities
+				- n = 0
+				- @questions[:_liabilities].each do |k,v|
+					- n = n + 1
+					.cell{:class=>((n%2==0)?"right":"")}
+						.title
+							= v[:sentence]
+							- if v[:type] == "_presence"
+								%span *
+						.unit
+						.input
+							- name = "#{Question::HARDFACTS[:_prefix]}_#{v[:id]}"
+							%input.question-id{:type=>'hidden', :name=>"question_id[]", :value=>"#{name}"}
+							- value = ""
+							- value = @tests[:"#{name}"][:answer] if @tests[:"#{name}"]
+							%input.answer{:type=>'text', :name=>"answer[]", :class=>((v[:type] == "_presence")?'required':''), :value=>value}
+			.clear
+			
+		%br
+		%br
+		%br
+		%br
+		=link_to 'Go Back', touchfeely_path, :class=>'grey-btn goback-btn'
+		=link_to 'Proceed', 'javascript:void(0)', :class=>'grey-btn proceed-btn'

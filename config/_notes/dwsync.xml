@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="application.rb" local="130000047985067021" remote="130000194010000000" testing="0" />
+<file name="boot.rb" local="129985604090000000" remote="129999857320000000" testing="0" />
+<file name="categories.yml" local="129985604090000000" remote="129999857340000000" testing="0" />
+<file name="database.yml" local="129999869551831223" remote="129999869670000000" testing="0" />
+<file name="deploy.rb" local="129985604090000000" remote="129999857460000000" testing="0" />
+<file name="environment.rb" local="129999497647919536" remote="129999857480000000" testing="0" />
+<file name="nginx.conf" local="129985604090000000" remote="129999858240000000" testing="0" />
+<file name="routes.rb" local="130000048541008819" remote="130000211940000000" testing="0" />
+<file name="unicorn_init.sh" local="129985604090000000" remote="129999858270000000" testing="0" />
+</dwsync>

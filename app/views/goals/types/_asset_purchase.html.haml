@@ -1,0 +1,49 @@
+%h2 Asset Purchase
+
+= form_for @goal do |f|
+  = render 'shared/error_messages', object: f.object
+
+  = hidden_field_tag "goal[category]", "Asset Purchase"
+  = hidden_field_tag "type", "house_rent"
+  .field
+    = f.label :title, "Give it a title"
+    %br
+    = f.text_field :title
+  .field
+    = f.label :amount
+    %br
+    = f.text_field :amount
+  .field
+    - for account in Account.find(:all) do
+      - if check_account_dedicated(account)
+        .available_accounts.disabled
+          = check_box_tag "goal[account_ids][]", account.id, @goal.accounts.include?(account), { id: "goal_account_ids_#{account.id}",  disabled: check_account_dedicated(account) }
+          = account.name
+          %small
+            (
+            %em
+              = account.amount
+              already dedicated
+            )
+      - else
+        .available_accounts
+          = check_box_tag "goal[account_ids][]", account.id, @goal.accounts.include?(account), { id: "goal_account_ids_#{account.id}" }
+          = account.name
+          %small
+            ( available:
+            %em
+              = account.amount
+              )
+  .field
+    Your balance is:
+    %span#goal_current_balance
+  .field
+    = f.label :planned_date
+    %br
+    = f.date_select :planned_date, :discard_day => true, :start_year => Date.today.year.next
+  .field
+    = f.label :contribution, "Your monthly contribution"
+    %br
+    = f.text_field :contribution
+  .actions
+    = f.submit

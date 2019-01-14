@@ -1,0 +1,17 @@
+#to_cluster {
+	position: absolute;
+	position: relative;
+	text-indent: -9999px;
+	width: 1000px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+  line-height: 300%;
+	display: block;
+	font-size: 200px;
+	height: 400px;
+}
+
+.clustered svg {
+  position: absolute;
+  left: 0;
+}

@@ -1,0 +1,24 @@
+<%= render 'incomes' %>
+<%= render 'spending' %>
+<aside>
+  <h3>You've budgeted</h3>
+  <dl class="income">
+    <dt>Income, &#8358;</dt>
+    <dd><%= @income_budgets.map(&:amount).sum %></dd>
+  </dl>
+  <dl class="spending">
+    <dt>Spending, &#8358;</dt>
+    <dd>&ndash;<%= @spending_budgets.map(&:amount).sum %></dd>
+  </dl>
+  <dl class="goals-amount">
+    <dt>Goals, &#8358;</dt>
+    <dd>0<%#= @goals_sum_on_current_month %></dd>
+  </dl>
+  <dl class="left">
+    <dt>Left over, $</dt>
+    <dd><%= @income_budgets.map(&:amount).sum - @spending_budgets.map(&:amount).sum %></dd>
+    <!--
+      TODO change color if we have minus in amount
+    -->
+  </dl>
+</aside>

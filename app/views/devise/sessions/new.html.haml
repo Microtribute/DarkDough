@@ -1,0 +1,41 @@
+%h2.page-title Sign In
+.signin-page
+	.left-area
+		.top-link-bar
+			.goback-link
+				=link_to 'Go back', 'javascript:history.back();'
+		= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+			.signin-form
+				- error_info = flash[:alert].to_s
+				-if error_info!="" && error_info.index("Invalid")!=nil
+					.error-bar
+						.icon
+						.desc
+					.clear
+				.info
+					.email
+						%label
+							Email
+						= f.email_field :email, :label=>false, :value=>''
+					.password
+						%label
+							Password
+						= f.email_field :email, :label=>false, :type=>'password', :value=>''
+				.remember-bar
+					.left
+					.right
+						- if devise_mapping.rememberable?
+							= f.check_box :remember_me
+							= f.label :remember_me
+				.clear
+				.actions
+					= f.submit "Sign in", :class=>'grey-btn'
+		.bottom-link-bar
+			.link-bar
+				=link_to 'Forgot your password?','#'
+				%br
+				=link_to "Didn't receive confirmation instructions?",'#'
+	.sep-bar
+	.right-area
+		.signin-form-for-social
+			#janrainEngageEmbed

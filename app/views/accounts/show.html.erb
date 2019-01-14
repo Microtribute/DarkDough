@@ -1,0 +1,22 @@
+<h1>Account</h1>
+
+<div class="block">
+<p>
+    <b>Name:</b>
+    <%= @account.name %>
+  </p>
+
+  <p>
+    <b>Status:</b>
+    <%= @account.status %>
+  </p>
+
+  <p>
+    <b>Bank:</b>
+    <%= @bank.name %>
+  </p>
+
+
+  <%= link_to 'Edit', edit_account_path(@account) %> |
+  <%= link_to 'Back', list_accounts_path %>
+</div>

@@ -1,0 +1,9 @@
+%h1 Profile
+
+= render :partial => 'user_profile_menu'
+
+#user-settings
+  = render :partial => 'user_info'
+
+= javascript_tag do
+  $('#user-settings').customForm();

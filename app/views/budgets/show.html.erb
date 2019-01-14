@@ -1,0 +1,27 @@
+<h1>Budget</h1>
+
+<p>
+  <b>Category:</b>
+  <%= @budget.category %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @budget.amount %>
+</p>
+
+<p>
+  <b>Period:</b>
+  <%= @budget.period %>
+</p>
+
+<% if @budget.start %>
+  <p>
+    <b>Started at:</b>
+    <%=l @budget.start, :format => :short %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Back', list_budgets_path %>

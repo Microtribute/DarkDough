@@ -1,0 +1,11 @@
+@import 'mixins';
+
+input[type=text], input[type=email], input[type=tel], input[type=password], textarea {
+  @include radius(2px);
+  margin: 5px 0;
+  padding: 3px 5px;
+  background: #fff;
+  border: 1px solid #e1dde6;
+  color: #3e4050;
+  font: 14px/22px helvetica, verdana, arial, sans-serif;
+}

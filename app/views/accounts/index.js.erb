@@ -1,0 +1,14 @@
+$('#banks').html("<%= escape_javascript(render :partial => "banks_searched_results") %>");
+<% if params[:selected_bank_id] %>
+  $('#dialog-content').html("<%= escape_javascript(render :partial => "new_account_final") %>");
+<% end %>
+
+$('.new-account-form').submit(function() {
+  $.get(this.action, $(this).serialize(), null, "script");
+  return false;
+});
+
+var links = $('.popular-bank a');
+links.on('click', function() {
+  $(this).next().submit();
+});

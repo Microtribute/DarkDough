@@ -1,0 +1,29 @@
+#budgets
+  %h2 Budget
+  %span.today= Date.today.strftime("%B %Y")
+
+  - if budgets.any?
+    .dashboard.budgets
+      .category
+      .progress-range
+        0%
+        %span 100%
+      .budget Budget
+      .left-over Left/Over
+      - budgets.spending.each do |budget|
+        .item
+          .category.links= budget.category.name
+          .progress
+          .budget
+            &#8358;
+            %span.end= budget.amount
+          .left-over{ class:  considering_the_sign(budget.amount - current_user.transactions_sum_by_category(budget.category)) }
+            &#8358;
+            = budget.amount - current_user.transactions_sum_by_category(budget.category)
+          %span.start.hidden= current_user.transactions_sum_by_category(budget.category)
+
+  - else
+    %br
+    %br
+
+    You haven't budgets yet

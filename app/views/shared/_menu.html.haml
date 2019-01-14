@@ -1,0 +1,13 @@
+- if user_signed_in?
+  %li= link_to "Dashboard", dashboard_path, class: current_page_menu('dashboard')
+  %li= link_to "Accounts", accounts_path, class: current_page_menu('accounts')
+  %li= link_to "Budgets", budgets_path, class: current_page_menu('budgets')
+  %li= link_to "Goals", goals_path, class: current_page_menu('goals')
+  %li= link_to "Trends", trends_path, class: current_page_menu('trends')
+  %li= link_to "Community", 'http://community.budget247.com'
+  %li= link_to "Profile", current_user, class: current_page_menu('users')
+  %li= link_to "Sign out", destroy_user_session_path, method: :delete, class: 'sign_out'
+
+- else
+  %li.r-border
+    = link_to 'Sign In', new_user_session_path

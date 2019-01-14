@@ -1,0 +1,43 @@
+%h2.page-title
+  TouchyFeely Test
+#full-width.grid_17.full-c
+  #test-progress
+    %span Your Progress
+    %span.progress-bar
+      %span.progress
+    .test-steps
+      %ul
+        %li.answered
+        %li
+        %li
+  .clear
+  %p
+    What information do I need to gather before taking this test?
+    %br
+      %i - Absolutely nothing but an open mind!
+  %p.duration
+    %span>
+    This evaluation should take you 10-15 mins.
+
+  #test-legend
+    %span.legend_icons
+    %ul
+      %li Strongly disagree
+      %li Moderately disagree
+      %li Neither agree nor disagree
+      %li Moderately agree
+      %li Strongly agree
+    %hr/
+    #small-progress
+      %span.sprogress-bar
+      %span.progress-num 7 of 36
+  #ac-test.grid_14
+    %ul
+      %li.answered
+        %span You shouldn't tell others how much you have.
+        .test_options
+          %button.strongly_disagree.mo.selected{:type => "button"}
+          %button.moderately_disagree.mo{:type => "button"}
+          %button.agree_nor_disagree.mo{:type => "button"}
+          %button.moderately_agree.mo{:type => "button"}
+          %button.strongly_agree.mo{:type => "button"}

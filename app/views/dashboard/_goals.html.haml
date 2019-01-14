@@ -1,0 +1,12 @@
+#goals
+  %h2 Goals
+
+  - goals.each do |goal|
+    .goal-item
+      = link_to goal_path(goal), class: "goal #{goal.category.parameterize.underscore}" do
+        = goal.title
+      %span
+        &#8358;
+        = goal.amount
+
+  .goal-item= link_to "Add a goal", select_goals_path, class: "goal new"

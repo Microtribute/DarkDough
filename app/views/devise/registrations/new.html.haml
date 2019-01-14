@@ -1,0 +1,117 @@
+#home-welcome.grid_24
+  #home-bg-rpt
+  %h5#to_cluster.interactive.clustered.active.ie BUDGET 24/7
+  %span Plan your Finances. Socially.
+
+.clear
+
+#home-content.grid_24
+  %h2 
+    Your 
+    %span Fun, Fresh & Fast
+    way to organize your money
+.clear
+- if flash[:is_signedup]
+  .success-dialog
+    /[if lt IE 9]
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <link href="/assets/ie.css" media="screen" rel="stylesheet" type="text/css">
+    #pop-up-ver.pop-up{:style => "display:block;"}
+      .overlay
+      .pop-width{:style => "width:540px;"}
+        .pop-container{:style => "max-width:490px;"}
+          %a.close{:onClick => "close_overlay('pop-up-ver');"}
+          %span.pop-up-title
+            %strong Please Complete your Sign up
+            %br We have sent a confirmation link to your email email@email.com. Please click the verification link to get started with Budget 24-7
+          .clear
+          .steps
+            %span.step 1
+            %span.step-title Sign up on Budget 24-7
+            %span.step-progress
+              %span.step-check>
+              Well Done! You Have Already Signed Up
+          .clear
+          .steps
+            %span.step 2
+            %span.step-title Look for Email in your inbox
+            %span.step-progress
+              %span.step-checkbox>
+              Check your Inbox
+          .clear
+          .steps
+            %span.step 3
+            %span.step-title Click the activation link
+            %span.step-progress Check link to activate your Account!
+          .clear
+          .steps
+            %span.step 4
+            %span.step-title Check your phone
+            %span.step-progress Check phone to see SMS code just sent
+
+.pre-form{:class=>('hidden' if flash[:alert])}
+  .actions
+    =link_to 'Get invited', 'javascript:void(0);', :class=>'btn', :id=>'show_form_button'
+    %br/
+    =link_to 'Already a member?', '#'
+  .desc
+    Another really helpful service brought to you by the insanely 
+    =link_to 'talented team','#'
+    at
+    =link_to 'Bellerophon','#'
+
+.landing-form{:class=>('hidden' unless flash[:alert])}
+  .alert
+    = flash[:alert] if flash[:alert]
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :class => "invite-form"}) do |f|
+    .name
+      %label
+        Name
+      = f.input :first_name,:label=>false
+    .clear
+    .emailwrapper
+      %label
+        Email
+      = f.input :email,:label=>false
+    .clear
+    .phone
+      %label
+        Phone
+      .country-code
+        %input{:value=>'+234'}
+        .desc
+          Country Code
+      .number
+        = f.input :phone_number,:label=>false, :requried=>true
+        = f.hidden_field :sms, :value=>sms
+    .clear
+    
+    .captcha
+      .desc
+        Show us you're really human, and not a cyborg
+      .wrapper
+        = recaptcha_tags
+    .invite-btn
+      = f.submit 'Get Invited', :class => 'submit-btn .invite-btn'
+  .sep-bar
+  .social-form
+    .desc
+      .slogan
+        Sick of forms?
+      .title
+        Use Social Login instead
+    .clear
+    .info
+      .phone
+        %label
+          Phone
+        .country-code
+          %input{:value=>'+234'}
+          .desc
+            Country Code
+        .number
+          %input
+    .clear
+    .social-buttons
+      .social-overlay.hidden
+      #janrainEngageEmbed

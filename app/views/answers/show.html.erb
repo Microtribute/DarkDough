@@ -1,0 +1,9 @@
+<h1>Answers</h1>
+
+<p>
+  Answer
+  <%= @answer.answer %><br />
+  <%= @answer.answer_code %>
+</p>
+
+<%= link_to "New answer", new_user_acumen_test_answer_path(current_user, @acumen_test) %>

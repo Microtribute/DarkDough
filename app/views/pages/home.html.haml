@@ -1,0 +1,29 @@
+#home-content.grid_24
+  %h2 
+    Your 
+    %span Fun, Fresh & Fast
+    way to organize your money
+    
+  .form
+    .left-reg.grid_9
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.input :first_name
+        = f.input :email
+        .actions
+          = f.submit 'Get Invited', :class => 'submit-btn'
+    .right-reg.grid_6
+      %span.stamp
+      %span.actions 
+        Already a member?
+        = link_to 'Sign In', '#'
+      = link_to '', '#', :class => 'fb_login'
+      = link_to '', '#', :class => 'tw_login'
+        
+  .centered
+    %span.another-service 
+      Another really helpful service brought to you by the insanely 
+      = link_to 'talented team', '#'
+      at 
+      = link_to 'Bellerophon', '#'
+			
+			

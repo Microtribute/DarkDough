@@ -1,0 +1,4 @@
+= form_for goal do |g|
+  = link_to "Mark as complete", '#', class: "finish_goal"
+  = g.check_box :finished, class: 'hidden'
+  = g.submit "Submit", class: "hidden"

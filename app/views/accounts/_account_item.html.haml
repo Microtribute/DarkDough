@@ -1,0 +1,32 @@
+.block.right.tabbed{ class: account.id }
+  %h4= account.name
+
+  .totals
+    .cash
+      = account.transactions.by_category('income').map(&:amount).sum
+      %spanTotal cash, $
+    .debt
+      &ndash;
+      = account.transactions.spending_transactions.map(&:amount).sum
+      %spanTotal debt, $
+
+  %table.transactions-table
+    %thead
+      %tr
+        %th.date.sort= sortable "created_at", "Date"
+        %th.description.sort= sortable "description"
+        %th.category.sort= sortable "category"
+        %th.amount.sort= sortable "amount"
+        %th.edit
+    %tbody
+      - @transactions.by_account(account).each do |transaction|
+        %tr.transaction.edited-item{ class: "item_#{transaction.id}" }
+          %td.date
+            =l transaction.created_at, format: :short
+          %td.description= transaction.description
+          %td.category= transaction.category
+          %td.amount= transaction.amount
+          %td.edit= link_to "Edit", '#', :class => "edit"
+        %tr.hidden
+          %td{ colspan: 4 }
+            = render partial: 'transaction_form', locals: { transaction: transaction, account: transaction.account }

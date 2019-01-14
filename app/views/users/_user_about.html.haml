@@ -1,0 +1,105 @@
+.block.right.tabbed.about.active
+  %h4 About you
+
+  %dl.item_1.edited-item
+    %dt First name
+    %dd.activated= current_user.first_name
+    %dd
+      = link_to "Edit", '#', class: 'edit', title: 'Edit'
+    = form_for current_user, remote: true do |f|
+      = f.text_field :first_name
+      .buttons
+        = f.submit "Save"
+        = link_to "Cancel", '#', class: 'item_1 cancel'
+
+  %dl.item_2.edited-item
+    %dt Last name
+    %dd.activated= current_user.last_name
+    %dd
+      = link_to "Edit", '#', class: 'edit', title: 'Edit'
+    = form_for current_user, remote: true do |f|
+      = f.text_field :last_name
+      .buttons
+        = f.submit "Save"
+        = link_to "Cancel", '#', class: 'item_2 cancel'
+
+  %dl.item_3.edited-item
+    %dt Age
+    %dd{class: activated_if(current_user.age) }
+      = current_user.age ? current_user.age : 'You don\'t specified age yet'
+    %dd
+      = link_to "Edit", '#', class: 'edit', title: 'Edit'
+    = form_for current_user, remote: true do |f|
+      = f.text_field :age
+      .buttons
+        = f.submit "Save"
+        = link_to "Cancel", '#', class: 'item_3 cancel'
+
+  %dl.item_4.edited-item
+    %dt Gender
+    %dd{class: activated_if(current_user.gender) }
+      = current_user.gender ? current_user.gender : 'You don\'t specified gender yet'
+    %dd
+      = link_to "Edit", '#', class: 'edit', title: 'Edit'
+    = form_for current_user, remote: true do |f|
+      = f.select :gender, User::GENDERS
+      .buttons
+        = f.submit "Save"
+        = link_to "Cancel", '#', class: 'item_4 cancel'
+
+  %dl.item_5.edited-item
+    %dt Avatar
+    %dd= File.basename(current_user.avatar.url)
+    %dd
+      = link_to "Edit", '#', class: 'edit', title: 'Edit'
+    = form_for current_user, remote: true do |f|
+      = f.file_field :avatar
+      .buttons
+        = f.submit "Save"
+        = link_to "Cancel", '#', class: 'item_5 cancel'
+
+  %dl.edited-item
+    %dt Marital status
+    %dd
+    %dd
+
+  %dl.edited-item
+    %dt Education level
+    %dd
+    %dd
+
+  %dl.edited-item
+    %dt Profession
+    %dd
+    %dd
+
+  %dl.edited-item
+    %dt Your household
+    %dd Income range
+    %dd
+
+  %dl.edited-item
+    %dt Post code
+    %dd
+    %dd
+
+  %dl.item_6.edited-item
+    %dt Country
+    %dd{class: activated_if(current_user.country) }
+      = current_user.country ? current_user.country : 'You don\'t specified country yet'
+    %dd= link_to "Edit", '#', class: 'edit', title: 'Edit'
+    = form_for current_user, remote: true do |f|
+      = f.select :country, Carmen::country_names
+      .buttons
+        = f.submit "Save"
+        = link_to "Cancel", '#', class: 'item_6 cancel'
+
+  %dl.edited-item
+    %dt Residential status
+    %dd
+    %dd
+
+  %dl.edited-item
+    %dt Household size
+    %dd
+    %dd

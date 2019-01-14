@@ -1,0 +1,7 @@
+%h1 Editing goal
+
+= params[:type] ? render_goal_form(params[:type]) : (render 'form')
+
+= link_to 'Show', @goal
+|
+= link_to 'Back', goals_path

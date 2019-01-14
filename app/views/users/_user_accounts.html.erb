@@ -1,0 +1,34 @@
+<div class="block right tabbed accounts">
+  <h4>Accounts</h4>
+  <%= link_to "Add a new account", new_account_path, :class => "add-account" %>
+  <% if @accounts.present? %>
+    <% @accounts.each do |account| %>
+      <div class="account">
+        <%= image_tag "account_img(remove).png", :width => "147px" %>
+        <span class="status <%= account.status %>">
+          <%= account.status.capitalize %>
+        </span>
+        <div class="name">
+          <strong><%= account.name %></strong>
+        </div>
+        <div class="times">
+          <span>
+            <strong>Updated:</strong> <%= time_ago_in_words account.created_at %>
+          </span>
+          <span>
+            <strong>Added:</strong> <%=l account.updated_at, :format => :universal %>
+          </span>
+        </div>
+        <span class="amount">
+          <strong>$ <%= account.amount %></strong>
+        </span>
+        <span class="buttons">
+          <%= link_to "Update", edit_account_path(account), :class => "update button" %>
+          <%= link_to  account, :confirm => 'Are you sure?', :method => :delete, :class => "delete button" do %>
+            Delete<i></i>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  <% end %>
+</div>

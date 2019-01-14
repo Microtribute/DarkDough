@@ -1,0 +1,30 @@
+<div class="block right tabbed settings">
+  <h4>General account settings</h4>
+  <dl class="item_6 edited-item">
+    <dt>Primary email</dt>
+    <dd><%= current_user.email %></dd>
+    <dd><%= link_to 'Edit', '#', :class => "edit" %></dd>
+    <%= form_for current_user do |f| -%>
+      <%= f.email_field :email %>
+      <div class="buttons">
+        <%= f.submit "Save" %>
+        <%= link_to "Cancel", '#', :class => 'item_6 cancel' %>
+      </div>
+    <% end -%>
+  </dl>
+  <dl class="edited-item">
+    <dt>Secondary email</dt>
+    <dd></dd>
+    <dd><%#= link_to 'Edit', '#', :class => "edit" %></dd>
+  </dl>
+  <dl class="edited-item">
+    <dt>Password</dt>
+    <dd></dd>
+    <dd><%#= link_to 'Edit', '#', :class => "edit" %></dd>
+  </dl>
+  <dl class="edited-item">
+    <dt>Username</dt>
+    <dd></dd>
+    <dd><%#= link_to 'Edit', '#', :class => "edit" %></dd>
+  </dl>
+</div>

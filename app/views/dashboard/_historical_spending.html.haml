@@ -1,0 +1,27 @@
+#spending
+  - if @spending_transactions.any?
+    %h2 Historical spending
+    %table.hidden{ style: 'height: 300px;'}
+      %thead
+        %tr
+          %td
+          %td
+            - @transactions_by_month.last(10).each do |month, transactions|
+              %th{ scope: 'col' }
+                = Date::ABBR_MONTHNAMES[month]
+
+      %tbody
+        - categorized(spending).each do |category, amount|
+          %tr
+            %th{ scope: 'row'}
+              = category
+            - @transactions_by_month.last(10).each do |month, transactions|
+              - arr = []
+              %td
+                - transactions.each{ |tr| arr << tr if tr.created_at.month == month && tr.category == category}
+                = arr.map{ |tr| tr.amount}.sum
+
+:javascript
+  $(function() { $('table').visualize(
+    { type: 'area', width: '595px'});
+  });

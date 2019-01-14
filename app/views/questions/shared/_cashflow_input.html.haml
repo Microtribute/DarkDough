@@ -1,0 +1,45 @@
+- n = 0
+- @questions[:"#{id}"].each do |k,v|
+	- if v[:type] == "_slider"
+		- name = "#{Question::CASHFLOW[:_prefix]}_#{v[:id]}"
+		- value = v[:default_value]
+		- value = @tests[:"#{name}"][:answer] if @tests[:"#{name}"]
+		.slider
+			%h3=v[:sentence]
+			%br
+			%input.question-id{:type=>'hidden', :name=>"question_id[]", :value=>"#{name}"}
+			%input.answer{:type=>'text', :name=>"answer[]", :id=>"#{name}", :value=>value}
+			%label=v[:unit]
+			.slider-bar{:idd=>name, :default_value=>value}
+			%br
+			%br
+	- else
+		- n = n + 1
+		.cell.left{:class=>v[:class]}
+			.title
+				= v[:sentence]
+				- if v[:type] == "_presence" or v[:type] == "_check"
+					%span *
+			.unit{:class=>((v[:type]=="_check")?"none":"") }
+			.input
+				- name = "#{Question::CASHFLOW[:_prefix]}_#{v[:id]}"
+				- value = ""
+				- value = @tests[:"#{name}"][:answer] if @tests[:"#{name}"]
+				%input.question-id{:type=>'hidden', :name=>"question_id[]", :value=>"#{name}"}
+				- if v[:type] == "_presence" or v[:type] == "_normal"
+					%input.answer{:type=>'text', :name=>"answer[]", :class=>((v[:type] == "_presence")?'required':''), :value=>value}
+				- elsif v[:type] == "_check"
+					.check-group
+						%input.answer{:type=>'hidden', :name=>"answer[]", :value=>value, :class=>'required'}
+						- v[:values].each do |k1, v1|
+							- selected = (v1[:selected]!=nil && v1[:selected]==true)
+							- _class = v1[:class]
+							- if k1.to_s==value.to_s
+								- _class = _class + " selected"
+							%button.grey-btn{:value=>k1, :class=>_class}
+								- if selected
+									%span>
+								=v1[:sentence]
+
+	- if v[:clear_line]!=nil && v[:clear_line]==true
+		.clear

@@ -1,0 +1,45 @@
+<menu class="left-side">
+  <ul>
+    <li>
+      <%= link_to '#', :class => "about active" do %>
+        About you
+        <span>Tell us about yourself</span>
+        <i></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to '#', :class => "settings" do %>
+        General account settings
+        <span>Helps to manage your devices</span>
+        <i></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to '#', :class => "email" do %>
+        Email &amp; alerts
+        <span>Set up notifications to receive informative</span>
+        <i></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to '#', :class => "accounts" do %>
+        Accounts
+        <span><%= pluralize(current_user.accounts.count, 'account') %> added</span>
+        <i></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to '#', :class => "hidden_accounts" do %>
+        Hide accounts and tags
+        <span>Your data is still there, just hidden</span>
+        <i></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to '#', :class => "delete_account" do %>
+        Delete account
+        <i></i>
+      <% end %>
+    </li>
+  </ul>
+</menu>

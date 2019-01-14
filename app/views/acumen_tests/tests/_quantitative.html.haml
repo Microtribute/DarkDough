@@ -1,0 +1,73 @@
+%h3 Quantitative Test
+
+%blockquote
+  What information do I need to gather before taking this test?
+  %br
+  %br
+
+  %ul
+    %li — Life insurance policy
+    %li — Bank account statement
+    %li — Certificate(s) of deposit
+    %li — Brokerage account statement
+    %li — Inventory of big ticket items in home
+    %li — Outstanding loan balances
+    %li — Investment term sheets (for entrepreneurs who used outside capital)
+
+.notifier This evaluation should take 15–20mins
+
+%h5 Assets
+.input_fields
+  - for answer in test_answers[58...66]
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+
+        .answer= answer_form.text_field :result
+  .total
+    Total market value of investments:
+
+.input_fields
+  - for answer in test_answers[66...74]
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+
+        .answer= answer_form.text_field :result
+  .total
+    Total assets:
+
+%h5 Liabilities
+.input_fields
+  - for answer in test_answers[74...81]
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+
+        .answer= answer_form.text_field :result
+  .total
+    Total liabilities:
+
+
+.net_worth
+  Net worth (assets - liabilities)
+
+%p
+  There are a number of ways to increase your net worth:
+%ul
+  %li Appreciation of assets (for example, a rise in the value of stocks, bonds, funds, and real estate)
+  %li Reducing liabilities. This also reduces the amount of interest payments made to service the debt
+  %li Increasing your income, such as through salary and wage increases, and increases in investment income
+  %li Reducing the amount spent on living expenses
+%p
+  BEWARE! Increasing your assets may not always increase your net worth.
+  This is especially true with depreciating assets, such as automobiles, computers, home entertainment systems, etc.

@@ -1,0 +1,34 @@
+%script{:src=>"/assets/_radio.js?_=1"}
+%script{:src=>"/assets/_table.js"}
+%script{:src=>"/assets/_check.js"}
+%script{:src=>"/assets/_multiline_text.js"}
+%script{:src=>"/assets/_touchfeely.js?_=1"}
+
+:javascript
+	var g_hardfacts_path = "#{hardfacts_path}";
+%h2.page-title
+	TouchyFeely Test
+#full-width.grid_17.full-c
+	= render :partial=>'questions/shared/progress'
+	#test-legend
+		%span.legend_icons
+		%ul
+			%li Strongly disagree
+			%li Moderately disagree
+			%li Neither agree nor disagree
+			%li Moderately agree
+			%li Strongly agree
+		%hr/
+		#small-progress
+			%span.sprogress-bar
+			%span.progress-num 7 of 36
+	#ac-test.grid_14
+		%ul
+			- @questions.each do |question|
+				%li
+					= render :partial=>'questions/tests/'+question.answer_type[1,1000], :locals=>{question: question}
+		%br
+		%br
+		%br
+		%br
+		%input{:type=>'button', :value=>"Proceed", :class=>'grey-btn', :id=>'btn-proceed'}

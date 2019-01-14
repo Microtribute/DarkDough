@@ -1,0 +1,16 @@
+:javascript
+	$(function(){
+		
+	});
+
+
+= form_for(acumen_test, html: {class: 'acumen_test_form'}) do |f|
+	= render 'shared/error_messages', object: f.object
+	- acumen_test.new_record? ? test_answers = acumen_test.answers : test_answers = @test_answers
+
+	= render 'acumen_tests/tests/qualitative', f: f, test_answers: test_answers
+	/= render 'acumen_tests/tests/quantitative', f: f, test_answers: test_answers
+	/= render 'acumen_tests/tests/cash_flow', f: f, test_answers: test_answers, acumen_test: acumen_test
+
+	%p= f.submit "Proceed"
+

@@ -1,0 +1,18 @@
+= form_for @test, :html=>{:submitted=>'no'} do |f|
+	- t = @tests[:"t_#{question.id}"]
+	- t = {:answer=>''} if t==nil
+	= f.hidden_field :question_id, :value=>question.id
+	= f.hidden_field :answer
+	= f.hidden_field :answer_sort, :value=>Question::ANSWER_TYPE[:"#{question.answer_type}"][:type]
+	%span=question.question
+	- answer_type_type = Question::ANSWER_TYPE[:"#{question.answer_type}"][:type]
+	.test_options{:class=>"#{question.answer_type} #{answer_type_type}_type"}
+		- tt = t[:answer]
+		- tt.lines.each do |line|
+			.row
+				%input.added{:type => "text", :value => line.gsub(/\r\n/,'')}
+				%span.delete
+		.row
+			%input{:type => "text"}
+			%span.add
+			%span.save

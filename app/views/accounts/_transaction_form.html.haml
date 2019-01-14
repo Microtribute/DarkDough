@@ -1,0 +1,23 @@
+= form_for account, remote: true do |f|
+
+  = f.fields_for :transactions, transaction do |transactions_fields|
+    .date= transactions_fields.text_field :created_at, value: transaction.created_at.strftime('%b %d')
+    .description= transactions_fields.text_field :description
+    .category= transactions_fields.text_field :category
+    .amount= transactions_fields.text_field :amount
+
+    %dl
+      %dt Details
+      %dd
+        You entered this
+        = transaction.category
+        transaction at
+        =l transaction.created_at, format: :short
+
+    %dl.textarea
+      %dt= transactions_fields.label :note, "Notes"
+      %dd= transactions_fields.text_area :note, rows: 3, cols: 62
+
+    .buttons
+      = transactions_fields.submit 'Save'
+      = link_to "Cancel", '#', class: "item_#{transaction.id} cancel"

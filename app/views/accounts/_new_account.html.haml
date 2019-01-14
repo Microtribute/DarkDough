@@ -1,0 +1,35 @@
+#overlay
+.dialog-block
+  = link_to "Cancel", '#', class: "dialog-cancel"
+
+  %h3 Add new account
+  #dialog-content
+    %h5 Find your bank
+    %span Enter your bank's name
+
+    .bank-search
+      = form_tag accounts_path, method: "get" do
+        = text_field_tag :bank_name, params[:bank_name], id: "search-input"
+        = submit_tag "Search", id: "search-submit"
+        = link_to '#', class: "search-link" do
+          %i
+      #banks-list-wrapper
+        #banks-list= @banks.join(',')
+        = link_to "clear bank", '#', :class => 'clear-bank'
+    %span
+      Examples:
+      = link_to "Bank of America", '#'
+      ,
+      = link_to "FSA Direct Loans", '#'
+
+    #banks
+      %h5 Or choose from these popular banks
+      - Bank.all.each_with_index do |bank, index|
+        .popular-bank
+          %span
+            = index + 1
+            \.
+          = link_to bank.name, '#'
+          = form_tag accounts_path, method: "get", class: "hidden new-account-form" do
+            = text_field_tag :selected_bank_id, bank.id
+            = submit_tag "submit"

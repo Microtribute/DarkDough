@@ -1,0 +1,98 @@
+@mixin inline-block {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+@mixin radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin experimental($property, $value) {
+  -moz-#{$property}: $value;
+  -webkit-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+@mixin box-shadow($bs) {
+  @include experimental(box-shadow, #{$bs});
+}
+
+@mixin box-sizing($val: border-box) {
+  -webkit-box-sizing: $val;
+  -moz-box-sizing: $val;
+  box-sizing: $val;
+}
+
+@mixin gradient($from, $to) {
+  background-color: $to;
+  background-image: -moz-linear-gradient(top, $from, $to);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, $from),color-stop(1, $to));
+  background-image: linear-gradient(top, $from, $to);
+}
+
+@mixin drop-down {
+  .chzn-single {
+    @include radius(1px);
+    @include gradient(#fff, #eee);
+    @include box-shadow(none);
+    border: 1px solid #e1dde6;
+    outline: none;
+    height: 28px;
+    line-height: 28px;
+
+    div b { background: image-url('ico/chosen_corner.png') left center no-repeat; }
+  }
+
+  .chzn-drop .chzn-search input {
+    padding: 4px 5px;
+    background: none;
+  }
+}
+
+@mixin add-link {
+  @include radius(5px);
+  @include box-sizing;
+  display: block;
+  width: 100%;
+  margin: 10px 0 20px;
+  padding: 10px 10px 10px 30px;
+  border: 1px dashed #e1dde6;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: Helvetica,Arial,sans-serif;
+  color: #b6b1be;
+  background: #fcfcfc image-url('ico/add_budget.png') 10px 10px no-repeat;
+}
+
+@mixin button {
+  @include inline-block;
+  @include radius(3px);
+  @include gradient(#fff, #efefef);
+  @include box-shadow(none);
+  text-shadow: 0 -1px 1px #fff;
+  border: 1px solid #e1dde6;
+  outline: none;
+  padding: 9px 16px;
+  text-decoration: none;
+  font: bold 12px Helvetica,Arial,sans-serif;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  color: #b6b1be;
+  cursor: pointer;
+
+  &:hover { @include gradient(#efefef, #fff); }
+}
+
+@mixin button-accented {
+  @include button;
+  @include gradient(#9d86bf, #9078b3);
+  text-shadow: 0 -1px 1px rgba(0,0,0,.21);
+  color: #fff;
+  
+  &:hover { @include gradient(#9078b3, #9d86bf) };
+}

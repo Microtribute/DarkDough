@@ -1,0 +1,36 @@
+<div id="over_time_partial">
+  <div class="spending_container svg bubble-info">
+    <% unless @spending_transactions.any? %>
+      <div>You do not have any spending transactions.</div>
+    <% end %>
+    <div class="hidden spending json"><%= @spending_over_time_json %></div>
+    <div class="hidden sum"><%= @spending_amount %></div>
+  </div>
+
+  <div class="income_container svg bubble-info by_category">
+    <% unless @income_transactions.any? %>
+      <div>You do not have any income transactions.</div>
+    <% end %>
+    <div class="hidden income json"><%= @income_over_time_json %></div>
+    <div class="hidden income sum"><%= @income_amount %></div>
+  </div>
+
+  <div class="net_income_container svg bubble-info by_category" style="vertical-align: top;">
+    <% unless @income_transactions.any? || @spending_transactions.any? %>
+      <div>You do not have Net income</div>
+    <% end %>
+    <div class="hidden income json"><%= @net_income_over_time_json %></div>
+  </div>
+
+  <div class="assets_containe svg bubble-info by_category">
+    No assets now
+  </div>
+
+  <div class="debts_containe svg bubble-info by_category">
+    No debts now
+  </div>
+
+  <div class="net_worth_containe svg bubble-info by_category">
+    No Net Worth now
+  </div>
+</div>

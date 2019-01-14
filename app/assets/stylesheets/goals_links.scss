@@ -1,0 +1,14 @@
+@import 'mixins';
+
+a.goal {
+  @include inline-block;
+  @include box-sizing;
+  width: 115px;
+  height: 90px;
+  padding-top: 75px;
+  vertical-align: top;
+  text-align: center;
+  background: image-url('goals/home.png') center 5px no-repeat;
+
+  &.new { background: image-url('goals/custom.png') center 5px no-repeat; }
+}

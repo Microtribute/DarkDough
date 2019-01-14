@@ -1,0 +1,10 @@
+%h1 Accounts
+
+= render partial: 'accounts_list_menu'
+
+#accounts= render partial: 'accounts'
+
+#new-account-dialog= render partial: 'new_account'
+
+:javascript
+  $('#accounts').customForm();

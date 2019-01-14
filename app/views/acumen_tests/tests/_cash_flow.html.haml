@@ -1,0 +1,141 @@
+%h3 Statement of Cash Inflows &amp; Outflows
+
+%blockquote
+  What information do I need to gather before taking this test?
+  %ul
+    %li — Payslips
+    %li ― Dividend details (listed and private companies)
+    %li ― Coupon payments (for bonds)
+    %li ― Business income (for entrepreneurs/self-employed)
+    %li ― Pension payment (if retired and drawing a pension)
+    %li ― Details of gifts/grants (for students, volunteers, pro-bono workers)
+    %li ― Alimony/child support receipts/payments
+    %li ― Utility bills
+    %li ― Interest payments on all loans
+
+.notifier This evaluation should take you 15–20mins
+
+%h5 Income (cash inflows)
+.input_fields
+  - for answer in test_answers[81...83]
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+        .answer= answer_form.text_field :result
+
+.input_fields
+  - if test_answers[83]
+    - answer = test_answers[83]
+    = f.fields_for :answers, answer do |answer_form|
+      .input.checkbox
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+        .answer= answer_form.check_box :result, id: "apply_paye"
+
+
+.total
+  %strong Net salary/wages
+  = acumen_test.net_salary unless acumen_test.new_record?
+
+.input_fields
+  - for answer in test_answers[84...91]
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+        .answer= answer_form.text_field :result
+
+
+
+.input_fields
+  - if test_answers[91]
+    - answer = test_answers[91]
+    = f.fields_for :answers, answer do |answer_form|
+      .input.checkbox
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+        .answer= answer_form.check_box :result, :id => "apply_income_tax"
+
+.input_fields
+  - if test_answers[92]
+    - answer = test_answers[92]
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+        .answer= answer_form.text_field :result
+
+.total
+  %strong Total income
+  = acumen_test.total_income_count unless acumen_test.new_record?
+%br
+
+.total
+  %strong Expenditures (cash outflows)
+  %small
+    %i average monthly amounts
+    %br
+    unless stated otherwise
+
+.input_fields
+  - for answer in test_answers[93...107]
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+        .answer= answer_form.text_field :result
+
+.total
+  %strong Total expenditures
+  = acumen_test.total_expenditures_count unless acumen_test.new_record?
+
+.two_questions
+
+  %h5 Finally, 2 simple questions
+  - test_answers[107...109].each_with_index do |answer, index|
+    = f.fields_for :answers, answer do |answer_form|
+      .input
+        .question
+          = answer_form.hidden_field :code
+          = answer_form.hidden_field :question
+          = answer.question
+        .answer
+          = answer_form.text_field :result, id: "began_#{index}"
+          years old
+
+    .slider{class: "slider_#{index}"}
+
+:javascript
+  $('.slider_0').slider({
+    range: "min",
+    value: 22,
+    min: 1,
+    max: 99,
+    slide: function( event, ui ) {
+      $("#began_0").val(ui.value);
+    }
+  });
+  $('.slider_1').slider({
+    range: "min",
+    value: 50,
+    min: 1,
+    max: 99,
+    slide: function( event, ui ) {
+      $("#began_1").val(ui.value);
+    }
+  });
+  $( "#began_0" ).val($( ".slider_0" ).slider("value"));
+  $( "#began_1" ).val($( ".slider_1" ).slider("value"));

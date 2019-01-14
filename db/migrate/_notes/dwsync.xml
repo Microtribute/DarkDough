@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="20120123135957_devise_create_users.rb" local="129985604090000000" remote="129999858510000000" testing="0" />
+<file name="20120123150300_add_fields_to_user.rb" local="129985604090000000" remote="129999858520000000" testing="0" />
+<file name="20120125063920_create_contact_us.rb" local="129985604090000000" remote="129999858540000000" testing="0" />
+<file name="20120126114917_create_acumen_tests.rb" local="129985604090000000" remote="129999858550000000" testing="0" />
+<file name="20120126120411_create_answers.rb" local="129985604090000000" remote="129999858570000000" testing="0" />
+<file name="20120209090402_create_accounts.rb" local="129985604090000000" remote="129999858580000000" testing="0" />
+<file name="20120209131636_create_banks.rb" local="129985604090000000" remote="129999858590000000" testing="0" />
+<file name="20120213132204_create_transactions.rb" local="129985604090000000" remote="129999858610000000" testing="0" />
+<file name="20120214092602_create_budgets.rb" local="129985604090000000" remote="129999858620000000" testing="0" />
+<file name="20120220141513_create_goals.rb" local="129985604090000000" remote="129999858640000000" testing="0" />
+<file name="20120221094824_create_accounts_goals_table.rb" local="129985604090000000" remote="129999858650000000" testing="0" />
+<file name="20120301091939_add_finished_to_goals.rb" local="129985604090000000" remote="129999858670000000" testing="0" />
+<file name="20120323071317_add_age_to_users.rb" local="129985604090000000" remote="129999858680000000" testing="0" />
+<file name="20120323074021_add_gender_to_users.rb" local="129985604090000000" remote="129999858700000000" testing="0" />
+<file name="20120621120921_add_avatar_column_to_users.rb" local="129985604090000000" remote="129999858710000000" testing="0" />
+<file name="20120624094124_devise_create_admin_users.rb" local="129985604090000000" remote="129999858730000000" testing="0" />
+<file name="20120624124130_create_admin_notes.rb" local="129985604090000000" remote="129999858740000000" testing="0" />
+<file name="20120624124131_move_admin_notes_to_comments.rb" local="129985604090000000" remote="129999858760000000" testing="0" />
+<file name="20120703112241_add_rpx_to_users.rb" local="129985604090000000" remote="129999858770000000" testing="0" />
+<file name="20120704072721_change_age_type_for_users.rb" local="129985604090000000" remote="129999858790000000" testing="0" />
+<file name="20120710110914_add_confirmable_to_users.rb" local="129985604090000000" remote="129999858800000000" testing="0" />
+<file name="20121023084825_acts_as_taggable_on_migration.rb" local="129985604090000000" remote="129999858820000000" testing="0" />
+<file name="20121024083844_add_budget_type_to_budgets.rb" local="129985604090000000" remote="129999858830000000" testing="0" />
+<file name="20121025090607_migrate_current_budgets.rb" local="129985604090000000" remote="129999858850000000" testing="0" />
+<file name="20121101112753_create_categories.rb" local="129985604090000000" remote="129999858860000000" testing="0" />
+<file name="20121101114427_add_category_id_to_budgets.rb" local="129985604090000000" remote="129999858880000000" testing="0" />
+<file name="20121114221540_rolify_create_roles.rb" local="129985604090000000" remote="129999858890000000" testing="0" />
+<file name="20121214154918_add_sms_to_users.rb" local="129999738310954674" remote="129999858910000000" testing="0" />
+</dwsync>
